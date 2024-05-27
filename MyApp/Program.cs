@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -24,11 +23,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.UseCors("AllowAll");
-
 app.MapControllers();
 
 // Добавьте эту строку для указания порта 5000
